@@ -10,6 +10,18 @@
           justify-content: center;
 }
 
+.main-nav .nav-header, .main-nav ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .header, .header .actions-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,6 +46,14 @@
 
 body {
   font-family: Roboto, sans-serif;
+}
+
+body ul {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
 }
 
 body .icon {
@@ -110,5 +130,64 @@ body .icon {
   color: #ffffff;
   border-radius: 50%;
   background: #5d4038;
+}
+
+.main-nav {
+  top: 0;
+  left: 0;
+  width: 240px;
+  position: fixed;
+  background: #ffffff;
+}
+
+.main-nav .nav-header {
+  height: 60px;
+  padding-left: 16px;
+  border-bottom: 1px solid #0000001a;
+}
+
+.main-nav .nav-header img {
+  height: 24px;
+}
+
+.main-nav ul {
+  padding: 12px 0;
+  list-style: none;
+  border-bottom: 1px solid #0000001a;
+}
+
+.main-nav ul li {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 20px;
+}
+
+.main-nav ul li.active {
+  background: #cacaca;
+}
+
+.main-nav ul li.active a {
+  font-weight: 500;
+  color: #030303;
+}
+
+.main-nav ul li.active a i {
+  color: #ff0000;
+}
+
+.main-nav ul li:hover {
+  color: #030303;
+  background: #f2f2f2;
+}
+
+.main-nav ul li a {
+  font-size: 14px;
+  color: #606060;
+}
+
+.main-nav ul li a i {
+  margin-right: 25px;
 }
 /*# sourceMappingURL=main.css.map */
