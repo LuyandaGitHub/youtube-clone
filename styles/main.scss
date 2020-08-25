@@ -148,9 +148,9 @@ body {
 
 .main-nav {
     top: 0;
+    width: 240px;
     z-index: 10;
     left: -300px;
-    width: 240px;
     position: fixed;
     background: #ffffff;
     
@@ -202,21 +202,14 @@ body {
                 font-size: 14px;
                 color: #606060;
                 @extend %flex-start;
-                
-                @media (min-width: 600px) {
-                    font-size: 10px;
-                }
 
                 i { 
                     margin-right: 25px;
-
-                    @media (min-width: 600px) {
-                        margin-right: 0;
-                    }
                 }
             }
         }
     }
+
 }
 
 .main-content-container {
