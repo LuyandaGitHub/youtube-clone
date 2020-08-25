@@ -57,6 +57,14 @@ body {
     .logo-and-menu-container {
         height: 24px;
         max-width: 185px;
+
+        .menu-icon {
+            display: none;
+        
+            @media (min-width: 600px) {
+                display: block
+            }
+        }
         
         img {
             height: 100%;
@@ -70,9 +78,13 @@ body {
         
         .search-form {
             width: 80%;
+            display: none;
             margin: 0 auto;
             @extend %center;
             max-width: 550px;
+            @media (min-width: 600px) {
+                display: flex;
+            }
             
             .search-bar {
                 height: 30px;
@@ -103,8 +115,23 @@ body {
     }
 
     .actions-container {
-        max-width: 200px;
+        max-width: 250px;
         @extend %space-between;
+
+        .create-icon, 
+        .apps-icon, 
+        .notification-icon {
+            display: none;
+            
+            @media (min-width: 600px) {
+                display: block
+            }
+        }
+        .mobile-search-icon {
+            @media (min-width: 600px) {
+                display: none;
+            }
+        }
         
         .user-icon-container {
             width: 32px;
@@ -121,12 +148,16 @@ body {
 
 .main-nav {
     top: 0;
-    left: 0;
     z-index: 10;
+    left: -300px;
     width: 240px;
     position: fixed;
     background: #ffffff;
     
+    @media (min-width: 600px) {
+        left: 0;
+    }
+
     .nav-header {
         height: 60px;
         padding-left: 16px;
@@ -171,9 +202,17 @@ body {
                 font-size: 14px;
                 color: #606060;
                 @extend %flex-start;
+                
+                @media (min-width: 600px) {
+                    font-size: 10px;
+                }
 
                 i { 
                     margin-right: 25px;
+
+                    @media (min-width: 600px) {
+                        margin-right: 0;
+                    }
                 }
             }
         }
@@ -183,22 +222,34 @@ body {
 .main-content-container {
     right: 0;
     top: 60px;
+    width: 100%;
     position: absolute;
-    width: calc(100% - 240px);
+
+    @media (min-width: 600px) {
+        width: calc(100% - 240px);
+    }
     
     .videos-container {
+        width: 100%;
+        @extend %center;
         flex-wrap: wrap;
-        margin-top: 25px;
         padding-top: 25px;
-        @extend %flex-start;
-        padding-right: 16px;
         background: #f9f9f9;
+
+        @media (min-width: 600px) {
+            padding-left: 0;
+        }
 
         .video {
             width: 100%;
-            margin: 0 auto 40px auto;
             cursor: pointer;
-            max-width: 250px;
+            max-width: none;
+            margin-bottom: 20px;
+            
+            @media (min-width: 600px) {
+                max-width: 250px;
+                margin: 0 10px 40px 10px;
+            }
 
             .image-container {
                 margin-bottom: 12px;
@@ -210,7 +261,7 @@ body {
 
             .description-container {
                 @extend %flex-start;
-                padding-right: 25px;
+                padding: 0 15px;
                 align-items: flex-start;
 
                 .profile-container {
@@ -226,10 +277,23 @@ body {
                 }
                 
                 .details-container {
-                    h6 {
-                        color: #030303;
-                        font-size: 14px;
-                        font-weight: 500;
+                    width: 100%;
+
+                    .video-header {
+                        @extend %space-between;
+
+                        h6 {
+                            color: #030303;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+
+                        img {
+                            @media (min-width: 600px) {
+                                opacity: none;
+                            }
+                        }
+
                     }
                     
                     p {
@@ -237,6 +301,47 @@ body {
                         font-size: 14px;
                         font-weight: 400;
                     }
+                }
+            }
+        }
+    }
+}
+
+.bottom-bar {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background: #ffffff;
+
+    @media (min-width: 600px) {
+        display: none;
+    }
+
+    ul {
+        @extend %center;
+
+        li {
+            padding: 5px;
+            text-align: center;
+            width: calc(100% / 4);
+
+            &.active {
+                a {
+                    i {
+                        color: #ff0000;
+                    }
+                }
+            }
+
+            a {
+                font-size: 11px;
+                color: #11111199;
+
+                i {
+                    margin: 0 auto;
+                    display: block;
                 }
             }
         }
