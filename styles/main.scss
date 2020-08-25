@@ -183,16 +183,16 @@ body {
 .main-content-container {
     right: 0;
     top: 60px;
-    padding-right: 16px;
     position: absolute;
     width: calc(100% - 240px);
-
+    
     .videos-container {
         flex-wrap: wrap;
         margin-top: 25px;
         padding-top: 25px;
+        @extend %flex-start;
+        padding-right: 16px;
         background: #f9f9f9;
-        @extend %space-between;
 
         .video {
             width: 100%;
@@ -211,6 +211,7 @@ body {
             .description-container {
                 @extend %flex-start;
                 padding-right: 25px;
+                align-items: flex-start;
 
                 .profile-container {
                     width: 36px;
